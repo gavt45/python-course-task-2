@@ -9,6 +9,8 @@ from datetime import date, datetime
 from random import randbytes
 from hashlib import sha256
 
+from config import JWT_SECRET_KEY
+
 from fastapi import Depends, Form, HTTPException, status, Query
 from typing import List, Annotated, Union, Optional
 
@@ -32,7 +34,7 @@ def get_date_param(
         )
 
 def get_mac(user_id: int, nonce: str):
-    return sha256(f"{user_id}{nonce}".encode("ascii")).hexdigest()
+    return sha256(f"{user_id}{nonce}{JWT_SECRET_KEY}".encode("ascii")).hexdigest()
 
 @app.post("/api/v1/todo:create", response_model=Todo)
 def create_todo(req: TodoCreate, client: User = Depends(get_user)):
