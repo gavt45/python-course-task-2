@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "todo-app"
+version = "0.1.0"
+description = ""
+authors = ["Andrey Gumirov <andreyt45@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.12"
+python-decouple = "^3.8"
+sqlalchemy = "^2.0.40"
+alembic = "^1.15.2"
+pyjwt = "^2.10.1"
+passlib = "^1.7.4"
+psycopg2-binary = "^2.9.10"
+python-dotenv = "^1.1.0"
+apscheduler = "^3.11.0"
+uvicorn = "^0.34.2"
+python-multipart = "^0.0.20"
+bcrypt = "4.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -7,6 +7,8 @@ docker run --name todo-gav-postgres -p5432:5432 -e POSTGRES_PASSWORD=postgres -d
 
 запускаем шел poetry (для простоты) (нужна poetry `pip install poetry`, или можно руками активировать венв при наличии `source .venv/bin/activate`):
 ```bash
+poetry config virtualenvs.in-project true
+poetry install 
 poetry shell
 ```
 
